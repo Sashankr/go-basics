@@ -11,5 +11,5 @@ func main(){
 	var years = 10
 
 	var futureValue = float64(investmentAmount) * math.Pow((1 + (expectedReturnRate /  100)),float64(years)); 
-	fmt.Print(math.Round(futureValue))
+	fmt.Println(math.Round(futureValue))
 }
