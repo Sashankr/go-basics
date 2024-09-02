@@ -42,7 +42,8 @@ func investment_calculator(){
 	var expectedReturnRate float64
 	var years float64
 
-	fmt.Print("Enter the investment amount: ")
+	// fmt.Print("Enter the investment amount: ")
+	outputText("Enter the investment amount: ")
 	fmt.Scan(&investmentAmount);
 
 	fmt.Print("Enter expected return rate: ")
@@ -76,3 +77,7 @@ func main(){
 	investment_calculator()
 	// profit_calculator()
 } 
+
+func outputText(value string){
+	fmt.Println(value);
+}
