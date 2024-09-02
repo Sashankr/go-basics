@@ -57,6 +57,18 @@ func investment_calculator(){
 	// fmt.Println(futureValue)
 	fmt.Printf("Future Value: %.1f\nFuture Value Adjusted for inflation:%.1f",futureValue,futureRealValue);
 
+	// formattedFutreValue := fmt.Sprintf("Future Value: %f.1\n",futureValue)
+	// formattedFutureAdjustedInflationValue := fmt.Sprintf("Future Adjusted for inflation: %f.1\n",futureRealValue)
+
+	// fmt.Print(formattedFutreValue)
+	// fmt.Print((formattedFutureAdjustedInflationValue))
+
+	// multi line
+	// fmt.Printf(`Future Value: %.1f
+	// Future Value Adjusted for inflation:%.1f`,futureValue,futureRealValue);
+
+
+
 	// fmt.Println(futureRealValue)
 }
 
