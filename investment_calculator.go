@@ -54,12 +54,13 @@ func investment_calculator(){
 	futureValue := investmentAmount * math.Pow((1 + (expectedReturnRate /  100)),years); 
 	futureRealValue := futureValue / math.Pow(1 + (inflationRate / 100),years)
 
-	fmt.Println(futureValue)
+	// fmt.Println(futureValue)
+	fmt.Printf("Future Value: %v\nFuture Value Adjusted for inflation:%v",futureValue,futureRealValue);
 
-	fmt.Println(futureRealValue)
+	// fmt.Println(futureRealValue)
 }
 
 func main(){
-	// investment_calculator()
-	profit_calculator()
+	investment_calculator()
+	// profit_calculator()
 } 
