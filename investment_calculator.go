@@ -40,7 +40,7 @@ func profit_calculator(){
 	// fmt.Println("Ratio: ", ratio);
 
 	ebt, profit, ratio := calculateEarnings(revenue,expenses,taxRate)
-	fmt.Printf("Eearning before tax: %.1f\nProfit: %f.1\nRatio: %.1f",ebt,profit,ratio)
+	fmt.Printf("Eearning before tax: %.1f\nProfit: %1.f\nRatio: %.3f\n",ebt,profit,ratio)
 
 }
 
