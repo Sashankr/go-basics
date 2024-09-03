@@ -35,9 +35,10 @@ func profit_calculator(){
 	fmt.Println("Ratio: ", ratio);
 
 }
+const inflationRate = 2.5
 
 func investment_calculator(){
-	const inflationRate = 2.5
+	
 	var investmentAmount float64 
 	var expectedReturnRate float64
 	var years float64
@@ -52,8 +53,9 @@ func investment_calculator(){
 	fmt.Print("Enter investment duration in years: ")
 	fmt.Scan(&years)
 
-	futureValue := investmentAmount * math.Pow((1 + (expectedReturnRate /  100)),years); 
-	futureRealValue := futureValue / math.Pow(1 + (inflationRate / 100),years)
+	// futureValue := investmentAmount * math.Pow((1 + (expectedReturnRate /  100)),years); 
+	// futureRealValue := futureValue / math.Pow(1 + (inflationRate / 100),years)
+	futureValue, futureRealValue:= calculateFutureValues(investmentAmount,expectedReturnRate,years)
 
 	// fmt.Println(futureValue)
 	fmt.Printf("Future Value: %.1f\nFuture Value Adjusted for inflation:%.1f",futureValue,futureRealValue);
@@ -80,4 +82,10 @@ func main(){
 
 func outputText(value string){
 	fmt.Println(value);
+}
+
+func calculateFutureValues(investmentAmount ,expectedReturnRate ,years float64) (float64,float64) {
+	fv := investmentAmount * math.Pow((1 + (expectedReturnRate /  100)),years)
+	rfv := fv / math.Pow(1 + (inflationRate / 100),years)
+	return  fv, rfv 	
 }
