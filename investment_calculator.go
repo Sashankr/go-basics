@@ -15,26 +15,49 @@ func profit_calculator(){
 	var expenses float64
 	var taxRate float64
 
-	fmt.Print("Enter your revenue: ")
-	fmt.Scan(&revenue)
+	// fmt.Print("Enter your revenue: ")
+	// fmt.Scan(&revenue)
 
-	fmt.Print("Enter your expenses: ")
-	fmt.Scan(&expenses)
+	revenue = get_user_input("Enter your revenue: ")
 
-	fmt.Print("Enter Tax Rate: ")
-	fmt.Scan(&taxRate)
+	// fmt.Print("Enter your expenses: ")
+	// fmt.Scan(&expenses)
+	expenses = get_user_input("Enter your expenses: ")
+
+	// fmt.Print("Enter Tax Rate: ")
+	// fmt.Scan(&taxRate)
+
+	taxRate = get_user_input("Enter Tax Rate: ")
 
 
-	earningsBeforeTax := revenue - expenses;
-	fmt.Println("Earnings Before Tax: ",earningsBeforeTax);
+	// earningsBeforeTax := revenue - expenses;
+	// fmt.Println("Earnings Before Tax: ",earningsBeforeTax);
 
-	earningsAfterTax := earningsBeforeTax - ((taxRate/100)*earningsBeforeTax)
-	fmt.Println("Earnings After Tax: ", earningsAfterTax)
+	// earningsAfterTax := earningsBeforeTax - ((taxRate/100)*earningsBeforeTax)
+	// fmt.Println("Earnings After Tax: ", earningsAfterTax)
 
-	ratio := earningsBeforeTax / earningsAfterTax
-	fmt.Println("Ratio: ", ratio);
+	// ratio := earningsBeforeTax / earningsAfterTax
+	// fmt.Println("Ratio: ", ratio);
+
+	ebt, profit, ratio := calculateEarnings(revenue,expenses,taxRate)
+	fmt.Printf("Eearning before tax: %.1f\nProfit: %f.1\nRatio: %.1f",ebt,profit,ratio)
 
 }
+
+func get_user_input(promptText string)(float64)  {
+	var tempVariable float64
+	fmt.Print(promptText)
+	fmt.Scan(&tempVariable)
+	return tempVariable
+}
+
+func calculateEarnings(revenue, expenses float64,taxRate float64)(float64, float64, float64){
+	ebt := revenue - expenses
+	profit :=ebt - ((taxRate/100)*ebt)
+	ratio := ebt / profit	
+	return ebt, profit, ratio
+}
+
 const inflationRate = 2.5
 
 func investment_calculator(){
@@ -76,8 +99,8 @@ func investment_calculator(){
 }
 
 func main(){
-	investment_calculator()
-	// profit_calculator()
+	// investment_calculator()
+	profit_calculator()
 } 
 
 func outputText(value string){
