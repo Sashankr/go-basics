@@ -159,6 +159,11 @@ func bank(){
 		var withdraw_amount float64
 		fmt.Print("Enter withdrawal amount: ")
 		fmt.Scan(&withdraw_amount)
+
+		if withdraw_amount <=0{
+			fmt.Println("Invalid amount")
+			return
+		}
 		
 		if withdraw_amount > account_balance{
 			fmt.Println("Insufficient Funds, Available Balance: ",account_balance)
