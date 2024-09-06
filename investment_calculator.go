@@ -147,6 +147,12 @@ func bank(){
 		var deposit_amount float64
 		fmt.Print("Enter Deposit Amount: ")
 		fmt.Scan(&deposit_amount)
+
+		if deposit_amount <=0{
+			fmt.Println("Invalid amount")
+			return
+		}
+
 		account_balance +=  deposit_amount // account_balance = account_balance + deposit_amount
 		fmt.Printf("New Balance: %.1f\n",account_balance);
 	} else if wantsToWithdrawMoney{
@@ -161,6 +167,8 @@ func bank(){
 		account_balance -= withdraw_amount
 		fmt.Printf("Withdraw successfull, Current Balance: %1.f\n",account_balance)
 
+	} else{
+		fmt.Println("Goodbye!")
 	}
 
 }
