@@ -100,7 +100,8 @@ func investment_calculator(){
 
 func main(){
 	// investment_calculator()
-	profit_calculator()
+	// profit_calculator()
+	bank()
 } 
 
 func outputText(value string){
@@ -119,3 +120,19 @@ func calculateFutureValues(investmentAmount ,expectedReturnRate ,years float64) 
 // 	rfv = fv / math.Pow(1 + (inflationRate / 100),years)
 // 	return
 // }
+
+
+func bank(){
+	fmt.Println("Welcome to Go Bank!")
+	fmt.Println("What do you want to do?")
+	fmt.Println("1. Check balance")
+	fmt.Println("2. Deposit Money")
+	fmt.Println("3. Withdraw Money")
+	fmt.Println("4. Exit")
+
+	var choice int
+	fmt.Print("Your choice: ")
+	fmt.Scan(&choice);
+
+	fmt.Println("Your choice: ",choice)
+}
