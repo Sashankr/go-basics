@@ -124,7 +124,7 @@ func calculateFutureValues(investmentAmount ,expectedReturnRate ,years float64) 
 
 func bank(){
 
-	var accountBalance = 1000.0
+	var account_balance = 1000.0
 
 	fmt.Println("Welcome to Go Bank!")
 	fmt.Println("What do you want to do?")
@@ -138,10 +138,16 @@ func bank(){
 	fmt.Scan(&choice);
 
 	wantsCheckBalance := choice == 1
+	wantsToDepositMoney := choice == 2
 
 	if wantsCheckBalance {
-		fmt.Println("Your balance is: ",accountBalance)
+		fmt.Println("Your balance is: ",account_balance)
+	} else if wantsToDepositMoney{
+		var deposit_amount float64
+		fmt.Print("Enter Deposit Amount: ")
+		fmt.Scan(&deposit_amount)
+		account_balance +=  deposit_amount // account_balance = account_balance + deposit_amount
+		fmt.Printf("New Balance: %.1f\n",account_balance);
 	}
 
-	fmt.Println("Your choice: ",choice)
 }
