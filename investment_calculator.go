@@ -126,7 +126,8 @@ func bank(){
 
 	var account_balance = 1000.0
 
-	fmt.Println("Welcome to Go Bank!")
+	for i:=0;i<2;i++{
+fmt.Println("Welcome to Go Bank!")
 	fmt.Println("What do you want to do?")
 	fmt.Println("1. Check balance")
 	fmt.Println("2. Deposit Money")
@@ -155,7 +156,7 @@ func bank(){
 
 		account_balance +=  deposit_amount // account_balance = account_balance + deposit_amount
 		fmt.Printf("New Balance: %.1f\n",account_balance);
-	} else if wantsToWithdrawMoney{
+	}  else if wantsToWithdrawMoney{
 		var withdraw_amount float64
 		fmt.Print("Enter withdrawal amount: ")
 		fmt.Scan(&withdraw_amount)
@@ -175,5 +176,8 @@ func bank(){
 	} else{
 		fmt.Println("Goodbye!")
 	}
+	}
+
+	
 
 }
