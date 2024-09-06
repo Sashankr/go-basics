@@ -139,6 +139,7 @@ func bank(){
 
 	wantsCheckBalance := choice == 1
 	wantsToDepositMoney := choice == 2
+	wantsToWithdrawMoney := choice == 3 
 
 	if wantsCheckBalance {
 		fmt.Println("Your balance is: ",account_balance)
@@ -148,6 +149,18 @@ func bank(){
 		fmt.Scan(&deposit_amount)
 		account_balance +=  deposit_amount // account_balance = account_balance + deposit_amount
 		fmt.Printf("New Balance: %.1f\n",account_balance);
+	} else if wantsToWithdrawMoney{
+		var withdraw_amount float64
+		fmt.Print("Enter withdrawal amount: ")
+		fmt.Scan(&withdraw_amount)
+		
+		if withdraw_amount > account_balance{
+			fmt.Println("Insufficient Funds, Available Balance: ",account_balance)
+			return
+		}
+		account_balance -= withdraw_amount
+		fmt.Printf("Withdraw successfull, Current Balance: %1.f\n",account_balance)
+
 	}
 
 }
