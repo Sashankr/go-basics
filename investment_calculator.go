@@ -125,10 +125,11 @@ func calculateFutureValues(investmentAmount ,expectedReturnRate ,years float64) 
 func bank(){
 
 	var account_balance = 1000.0
+    fmt.Println("Welcome to Go Bank!")
 
-	for i:=0;i<2;i++{
-fmt.Println("Welcome to Go Bank!")
-	fmt.Println("What do you want to do?")
+	for {
+	
+		fmt.Println("What do you want to do?")
 	fmt.Println("1. Check balance")
 	fmt.Println("2. Deposit Money")
 	fmt.Println("3. Withdraw Money")
@@ -151,7 +152,7 @@ fmt.Println("Welcome to Go Bank!")
 
 		if deposit_amount <=0{
 			fmt.Println("Invalid amount")
-			return
+			continue
 		}
 
 		account_balance +=  deposit_amount // account_balance = account_balance + deposit_amount
@@ -163,21 +164,23 @@ fmt.Println("Welcome to Go Bank!")
 
 		if withdraw_amount <=0{
 			fmt.Println("Invalid amount")
-			return
+			continue
 		}
 		
 		if withdraw_amount > account_balance{
 			fmt.Println("Insufficient Funds, Available Balance: ",account_balance)
-			return
+			continue
 		}
 		account_balance -= withdraw_amount
 		fmt.Printf("Withdraw successfull, Current Balance: %1.f\n",account_balance)
 
 	} else{
 		fmt.Println("Goodbye!")
+		break
 	}
+	
 	}
 
-	
+	fmt.Println("Thanks for choosing our bank")
 
 }
